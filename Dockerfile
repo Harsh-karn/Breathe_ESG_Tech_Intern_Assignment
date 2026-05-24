@@ -28,4 +28,4 @@ ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000
 
-CMD python manage.py migrate && python manage.py shell -c "from ingestion.models import Tenant; Tenant.objects.get_or_create(name='Acme Corp')" && gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 2
+CMD ["bash", "start.sh"]
