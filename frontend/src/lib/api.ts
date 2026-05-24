@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000/api'; // Or your deployed URL
+const API_BASE = import.meta.env.DEV ? 'http://localhost:8000/api' : '/api';
 
 export const api = axios.create({
   baseURL: API_BASE,
